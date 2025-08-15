@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta name="description" content="Imagine to Hear">
+  <meta property="og:title" content="Imagine to Hear"/>
+  <meta property="og:description" content="Imagine to Hear Project Page"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
@@ -24,10 +24,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>ImagineToHear</title>
+<!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  rel="stylesheet"> -->
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -43,7 +43,183 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
 </head>
+
+<style>
+  .item {
+    padding-bottom: 20px; 
+    max-width: 100%;
+}
+  
+  .case-study-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+  
+.case-study-box {
+    width: 65%; 
+    max-width: 1000px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.model-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Mobile layout - flex direction changes */
+@media (max-width: 768px) {
+  .model-row {
+    flex-direction: column;
+  }
+}
+
+  .icon {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+
+
+  .model-name {
+    font-weight: bold;
+  }
+
+  .text-danger {
+    color: red;
+  }
+
+  .text-success {
+    color: green;
+  }
+  
+
+  .audio-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .audio-icon {
+    font-size: 22px;
+    margin-left: 10px;
+    color: #007bff;
+  }
+
+  .case-study-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center; 
+  margin-bottom: 40px;
+}
+
+
+  .case-study-box2 {
+    width: 65%;
+    max-width: 1000px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 15px; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .case-study-box2 p {
+    font-size: 16px; 
+  }
+
+  .spectrogram-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .spectrogram-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px; 
+  }
+
+  .spectrogram-box img {
+    width: 250px; 
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+
+  .spectrogram-label {
+    font-size: 16px; 
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .audio-container2 {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 6px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  } 
+
+
+  .dki-section {
+  margin-top: 100px !important; 
+}
+
+  .fusion-section {
+  margin-top: 100px !important; 
+}
+
+.fusion-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.fusion-image {
+  max-width: 100%; 
+  width: 600px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+  .carousel {
+  max-width: 100%; 
+}
+</style>
+  
 <body>
 
 
@@ -52,28 +228,30 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-3 publication-title">Imagine to Hear: Auditory Knowledge Generation can be an Effective
+Assistant for Language Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+              <span class="author-block"> 
+                <a href="https://uso7d0.github.io" target="_blank">Suho Yoo</a><sup>1*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://hj-ok.github.io/" target="_blank">Hyunjong Ok</a><sup>1,2*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://jaeho-lee.github.io" target="_blank">Jaeho Lee</a><sup>2</sup>
                   </span>
-                  </div>
+              </div>
+
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block"><sup>1</sup>HJ AILAB <sup>2</sup>POSTECH<br>ACL 2025 Findings</span>  
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
+
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/2503.16853.pdf" target="_blank" 
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -82,20 +260,9 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/uso7d0/ImagineToHear" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -105,13 +272,13 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+<!--                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+                  </span> -->
+<!--                   <span>arXiv</span> -->
                 </a>
               </span>
             </div>
@@ -122,24 +289,210 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
 <section class="hero teaser">
-  <div class="container is-max-desktop">
+  <div class="container">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      <div class="container is-max-desktop" style="margin-top:30px;">
+        <div class="section-title has-text-centered">
+          <h2 class="title is-3">Case Study</h2>
+        </div>
+        <div class="content has-text-left" style="margin-top: 20px; font-size: 18px;">
+          <p><strong>We present three case studies demonstrating the effectiveness of our proposed approach:</strong></p>
+          <p><strong>1) <i>Imagine to Hear (ITH) Case Study</i></strong> illustrates how generative auditory knowledge enhances language models in sound-related tasks, enabling more accurate auditory reasoning.</p>
+          <p><strong>2) <i>Dynamic Knowledge Injection (DKI) Case Study</i></strong> highlights the impact of targeted audio span injection, showing how selective auditory knowledge improves model predictions.</p>
+          <p><strong>3) <i>Fusion Gate (FG) Case Study</i></strong> visualizes the influence of auditory knowledge integration by examining token-wise fusion gate weights, where higher values indicate stronger audio knowledge incorporation.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
 
+<!-- Case Study Carousel -->
+<div class="container is-max-desktop">
+  <div id="case-study-carousel" class="carousel">
+
+    <!-- Slide 1: ITH Case Study -->
+    <div class="item">
+      <h3 class="title is-4 has-text-centered">ITH Case Study</h3>
+      <div class="case-study-container">
+        <div class="case-study-box">
+          <p><b>Sentence:</b> Rattle is the sound a [MASK] makes.</p>
+          <p><b>Answer:</b> Snake</p>
+          <div class="model-row">
+            <p><span class="model-name">BERT:</span> <span class="text-danger">Dog</span> <i class="fas fa-times-circle text-danger"></i></p>
+          </div>
+          <div class="model-row">
+            <p><span class="model-name">ITH:</span> <span class="text-success">Snake</span> <i class="fas fa-check-circle text-success"></i></p>
+            <div class="audio-container">
+              <audio controls controlslist="nodownload">
+                <source src="static/audio/rattle_sound_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-box">
+          <p><b>Sentence:</b> The sound of chirping in the fall is often associated with a [MASK].</p>
+          <p><b>Answer:</b> Cricket</p>
+    
+          <div class="model-row">
+            <p><span class="model-name">BERT:</span> <span class="text-danger">Bird</span> <i class="fas fa-times-circle text-danger"></i></p>
+          </div>
+    
+          <div class="model-row">
+            <p><span class="model-name">ITH:</span> <span class="text-success">Cricket</span> <i class="fas fa-check-circle text-success"></i></p>
+            <div class="audio-container">
+              <audio controls controlslist="nodownload">
+                <source src="static/audio/chirping_sound_0.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: DKI Case Study (Part 1) -->
+    <div class="item">
+      <h3 class="title is-4 has-text-centered">DKI Case Study - Part 1</h3>
+      <div class="case-study-container2">
+        <div class="case-study-box2">
+          <p><b>Sentence:</b> The <b>sound of guitar</b> is [MASK] than the <b>sound of sopranissimo saxophone</b>.</p>
+          <p><b>Answer:</b> Lower</p>
+          <div class="model-row">
+            <p><span class="model-name">w/o DKI:</span> <span class="text-danger">Higher</span> <i class="fas fa-times-circle text-danger"></i></p>
+          </div>
+          <div class="model-row">
+            <p><span class="model-name">ITH:</span> <span class="text-success">Lower</span> <i class="fas fa-check-circle text-success"></i></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spectrogram -->
+      <div class="spectrogram-container">
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Guitar</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/sound_of_guitar_sound_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/sound_of_guitar.png" alt="Guitar Spectrogram">
+        </div>
+
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Sopranissimo Saxophone</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/sound_of_sopranissimo_saxophone_sound_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/sound_of_sopranissimo_saxophone.png" alt="Sopranissimo Saxophone Spectrogram">
+        </div>
+
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Sentence</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/The_sound_of_guitar_is_[MASK]_than_the_sound_of_sopranissimo_saxophone_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/The_sound_of_guitar_is_[MASK]_than_the_sound_of_sopranissimo_saxophone.png" alt="Sentence Spectrogram">
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: DKI Case Study (Part 2) -->
+    <div class="item">
+      <h3 class="title is-4 has-text-centered">DKI Case Study - Part 2</h3>
+      <div class="case-study-container2">
+        <div class="case-study-box2">
+          <p><b>Sentence:</b> The <b>sound of alto trombone</b> is [MASK] than the <b>sound of sopranino trombone</b>.</p>
+          <p><b>Answer:</b> Lower</p>
+          <div class="model-row">
+            <p><span class="model-name">w/o DKI:</span> <span class="text-danger">Higher</span> <i class="fas fa-times-circle text-danger"></i></p>
+          </div>
+          <div class="model-row">
+            <p><span class="model-name">ITH:</span> <span class="text-success">Lower</span> <i class="fas fa-check-circle text-success"></i></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spectrogram -->
+      <div class="spectrogram-container">
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Alto Trombone</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/sound_of_alto_trombone_sound_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/sound_of_alto_trombone.png" alt="Alto Trombone Spectrogram">
+        </div>
+
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Sopranino Trombone</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/sound_of_sopranino_trombone_sound_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/sound_of_sopranino_trombone.png" alt="Sopranino Trombone Spectrogram">
+        </div>
+
+        <div class="spectrogram-box">
+          <div class="spectrogram-label">Sentence</div>
+          <div class="audio-container2">
+            <audio controls controlslist="nodownload">
+              <source src="static/audio/The_sound_of_alto_trombone_is_[MASK]_than_the_sound_of_sopranino_trombone_0.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <img src="static/image/The_sound_of_alto_trombone_is_[MASK]_than_the_sound_of_sopranino_trombone.png" alt="Sentence Spectrogram">
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Fusion Gate Case Study -->
+    <div class="item">
+      <h3 class="title is-4 has-text-centered">Fusion Gate Case Study</h3>
+      <div class="fusion-image-container">
+        <img src="static/image/fusion_gate.png" alt="Fusion Gate Case Study" class="fusion-image">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bulma Carousel Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    bulmaCarousel.attach('#case-study-carousel', {
+      navigation: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: true, 
+      autoplay: false, 
+      autoplaySpeed: 0, 
+      pagination: false
+    });
+  });
+</script>
+
+
+
+
+
+  
+  
+
+      
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -147,8 +500,9 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          <p style="font-size:18px;">
+            Language models pretrained on text-only corpora often struggle with tasks that require auditory commonsense knowledge. Previous work addresses this problem by augmenting the language model to retrieve knowledge from external audio databases. This approach has several limitations, such as the potential lack of relevant audio in databases and the high costs associated with constructing and querying the databases. To address these issues, we propose Imagine to Hear, a novel approach that dynamically generates auditory knowledge using generative models. Our framework detects multiple audio-related textual spans from the given prompt and generates corresponding auditory knowledge. We develop several mechanisms to efficiently process multiple auditory knowledge, including a CLAP-based rejection sampler and a language-audio fusion module. Our experiments show that our method achieves state-of-the-art performance on AuditoryBench without relying on external databases, highlighting the effectiveness of our generation-based approach.
+
           </p>
         </div>
       </div>
@@ -158,127 +512,36 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
+<!-- Model Architecture Section -->
+<section class="hero">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    <div class="container is-max-desktop" style="margin-top: 10px;">
+      <div class="section-title has-text-centered">
+        <h3 class="title is-3">Model Architecture</h3>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+      <div class="content has-text-left">
+        <img src="static/images/ITH_model.png" alt="Model Architecture" style="display: inline-block; margin-top: 30px;"/>
+        <p style="font-size:17px; margin-top: 30px;"><strong>An illustration of the overall framework of the proposed Imagine to Hear (ITH), consisting of three components:</strong></p>
+        <p style="font-size:17px;"><strong>1)</strong> An imagination module, which detects multiple audio-related spans from the given prompt and generates multiple corresponding audio knowledge.</p>
+        <p style="font-size:17px;"><strong>2)</strong> A fusion module, which combines the (variable-length) auditory and textual information.</p>
+        <p style="font-size:17px;"><strong>3)</strong> A language encoder, which processes the output of the fusion module.</p>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{yoo2025imagine,
+  title={Imagine to Hear: Auditory Knowledge Generation can be an Effective Assistant for Language Models},
+  author={Yoo, Suho and Ok, Hyunjong and Lee, Jaeho},
+  journal={arXiv preprint arXiv:2503.16853},
+  year={2025}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
