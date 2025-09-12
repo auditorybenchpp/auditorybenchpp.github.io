@@ -348,47 +348,50 @@ Auditory Knowledge without Hearing?</h1>
       </div>
       <div class="content has-text-left">
         <img src="static/images/dataset_pipeline.png" alt="Details of the Pipeline" style="display: inline-block;"/>
-        <p style="font-size:20px; margin-top:30px;"> The construction pipeline is presented below, with tasks grouped by their original resource. </p>
-        <p style="font-size:18px;">
-  <ul>
-    <li><b>AuditoryBench</b>
-      <ul>
-        <li><b>Pitch Comparison:</b> Derived from the <i>AuditoryBench</i> wiki set on sound pitch comparison. 
-          This subset primarily consists of instrument-based pairs, allowing for objective and unambiguous 
-          evaluations of relative pitch differences 
-          (<a href="https://en.wikipedia.org/wiki/Range_(music)" target="_blank">Range (music)</a>).
-        </li>
-        <li><b>Animal Sound Recognition:</b> Constructed from the <i>AuditoryBench</i> wiki and test sets. 
-          Three authors independently scored each sample on a 0–2 scale, and any item receiving a score of 0 
-          from at least one annotator was removed. Inter-rater agreement was substantial 
-          (Kendall’s W = 0.666; ICC(2,k) = 0.75; Cronbach’s α = 0.75), ensuring dataset consistency and reliability.
-        </li>
-      </ul>
-    </li>
-    <li><b>AudioTime</b>
-      <ul>
-        <li><b>Duration Comparison:</b> Built from segment-level annotations. Classes with fewer than 30 samples 
-          were excluded, outliers were removed using the IQR rule, and only statistically significant contrasts 
-          (p &lt; 0.01) were retained.
-        </li>
-        <li><b>Loudness Comparison:</b> Derived from the same source, with loudness measured by peak decibel 
-          levels in each segment to ensure reliable intensity distinctions. Final filtering was performed by 
-          authors to discard classes unsuitable for the task.
-        </li>
-      </ul>
-    </li>
-    <li><b>MMAU</b>
-      <ul>
-        <li><b>Auditory Context Reasoning:</b> Adapted from the open MMAU set. Audio clips were first captioned 
-          using Qwen2-Audio to capture salient auditory cues. The captions, together with the original questions, 
-          were reformulated by GPT-4o into text-only problems while preserving reasoning objectives. 
-          Human verification and refinement were applied to discard incoherent items and ensure naturalness 
-          in a purely text-based setting.
-        </li>
-      </ul>
-    </li>
-  </ul>
+        <p style="font-size:20px; margin-top:30px;">
+  The construction pipeline is presented below, with tasks grouped by their original resource.
 </p>
+
+<ul style="font-size:18px;">
+  <li><b>AuditoryBench</b>
+    <ul>
+      <li><b>Pitch Comparison:</b> Derived from the <i>AuditoryBench</i> wiki set on sound pitch comparison. 
+        This subset primarily consists of instrument-based pairs, allowing for objective and unambiguous 
+        evaluations of relative pitch differences 
+        (<a href="https://en.wikipedia.org/wiki/Range_(music)" target="_blank">Range (music)</a>).
+      </li>
+      <li><b>Animal Sound Recognition:</b> Constructed from the <i>AuditoryBench</i> wiki and test sets. 
+        Three authors independently scored each sample on a 0–2 scale, and any item receiving a score of 0 
+        from at least one annotator was removed. Inter-rater agreement was substantial 
+        (Kendall’s W = 0.666; ICC(2,k) = 0.75; Cronbach’s α = 0.75), ensuring dataset consistency and reliability.
+      </li>
+    </ul>
+  </li>
+
+  <li><b>AudioTime</b>
+    <ul>
+      <li><b>Duration Comparison:</b> Built from segment-level annotations. Classes with fewer than 30 samples 
+        were excluded, outliers were removed using the IQR rule, and only statistically significant contrasts 
+        (p &lt; 0.01) were retained.
+      </li>
+      <li><b>Loudness Comparison:</b> Derived from the same source, with loudness measured by peak decibel 
+        levels in each segment to ensure reliable intensity distinctions. Final filtering was performed by 
+        authors to discard classes unsuitable for the task.
+      </li>
+    </ul>
+  </li>
+
+  <li><b>MMAU</b>
+    <ul>
+      <li><b>Auditory Context Reasoning:</b> Adapted from the open MMAU set. Audio clips were first captioned 
+        using Qwen2-Audio to capture salient auditory cues. The captions, together with the original questions, 
+        were reformulated by GPT-4o into text-only problems while preserving reasoning objectives. 
+        Human verification and refinement were applied to discard incoherent items and ensure naturalness 
+        in a purely text-based setting.
+      </li>
+    </ul>
+  </li>
+</ul>
       </div>
     </div>
   </div>
