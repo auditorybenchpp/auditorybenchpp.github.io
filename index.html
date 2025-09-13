@@ -808,6 +808,28 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <!-- Dataset Statistics -->
 
+<!-- Training Pipeline -->
+  <section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="section-title has-text-centered">
+        <h3 class="title is-3">Method</h3>
+      </div>
+      <div class="content has-text-justified">
+        <h3 class="subtitle has-text-centered" style="margin-top: 30px;">Answer Distribution</h3>
+        <img src="static/images/method.png" alt="comparision" style="display: inline-block;"/>
+        <ul style="margin-top:20px;">
+          <li><b>Pipeline of the proposed AIR-CoT:</b></li>
+          <li>(a) <b>Data Preparation:</b> Training data is augmented with <code>[imagine]</code> tokens to mark spans requiring auditory reasoning.</li>
+          <li>(b) <b>Stage 1 – Span Detection:</b> The model is fine-tuned to detect the spans by generating the special tokens during decoding.</li>
+          <li>(c) <b>Stage 2 – Knowledge Injection:</b> When encountering the <code>[/imagine]</code> token, the model pauses to generate the embedding using CLAP and injects it for auditory reasoning.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Dataset Statistics -->
+
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
