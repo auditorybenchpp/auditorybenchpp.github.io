@@ -809,23 +809,22 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Dataset Statistics -->
 
 <!-- Training Pipeline -->
-  <section class="section hero is-light">
+  <section class="section hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="section-title has-text-centered">
         <h3 class="title is-3">Method</h3>
       </div>
       <div class="content has-text-justified">
-        <h3 class="subtitle has-text-centered" style="margin-top: 30px;">Answer Distribution</h3>
         <img src="static/images/method.png" alt="comparision" style="display: inline-block;"/>
         <p style="font-size:18px; margin-top:30px;">
         Pipeline of the proposed AIR-CoT:
       </p>
-        <ul style="font-size:18px;">
-          <li>(a) <b>Data Preparation:</b> Training data is augmented with <code>[imagine]</code> tokens to mark spans requiring auditory reasoning.</li>
-          <li>(b) <b>Stage 1 – Span Detection:</b> The model is fine-tuned to detect the spans by generating the special tokens during decoding.</li>
-          <li>(c) <b>Stage 2 – Knowledge Injection:</b> When encountering the <code>[/imagine]</code> token, the model pauses to generate the embedding using CLAP and injects it for auditory reasoning.</li>
-        </ul>
+        <ol type="a" style="margin-top:10px;">
+          <li><b>Data Preparation:</b> Training data is augmented with <span style="font-family: monospace; background: none; color: inherit;">[imagine]</span> tokens to mark spans requiring auditory reasoning.</li>
+          <li><b>Stage 1 – Span Detection:</b> The model is fine-tuned to detect the spans by generating the special tokens during decoding.</li>
+          <li><b>Stage 2 – Knowledge Injection:</b> When encountering the <span style="font-family: monospace; background: none; color: inherit;">[/imagine]</span> token, the model pauses to generate the embedding using CLAP and injects it for auditory reasoning.</li>
+        </ol>
       </div>
     </div>
   </div>
