@@ -671,15 +671,20 @@ Auditory Knowledge without Hearing?</h1>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (window.bulmaCarousel) {
-    bulmaCarousel.attach('#samples-carousel', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      infinite: false,
-      navigation: true,
-      pagination: false
-    });
-  }
+  // 1) data-* 속성을 읽게 하고
+  // 2) 명시적으로 infinite/loop 옵션도 넘깁니다 (빌드 호환)
+  bulmaCarousel.attach('#samples-carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    infinite: true,   // 핵심: 순환
+    loop: true,       // 일부 버전 호환용
+    navigation: true,
+    pagination: false,
+    // 필요시 자동 재생까지 원하면 아래 주석 해제
+    autoplay: true,
+    duration: 4000,   // 슬라이드 간 대기(ms), 빌드에 따라 autoplaySpeed 또는 delay일 수 있음
+    pauseOnHover: true
+  });
 });
 </script>
       </div>
