@@ -667,6 +667,23 @@ Auditory Knowledge without Hearing?</h1>
   .options .tag { margin-right: .4rem; }
   .options .is-correct { font-weight: 600; }
   .answer .tag { margin-right: .4rem; }
+  /* Show choice text inside our carousel even if global .option conflicts exist */
+  #samples-carousel .options .option{
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    font-size: 16px !important;   /* 혹시 전역에서 0으로 만든 경우 방지 */
+    line-height: 1.4 !important;
+    color: #222 !important;        /* 배경색 대비 */
+    visibility: visible !important;
+  }
+  #samples-carousel .options .option .tag{
+    margin-right: .25rem;
+  }
 </style>
 
 <script>
