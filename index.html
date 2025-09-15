@@ -2,272 +2,161 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
+  <!-- Meta tags -->
   <meta name="description" content="AuditoryBench++">
   <meta property="og:title" content="AuditoryBench++"/>
   <meta property="og:description" content="AuditoryBench++ Project Page"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/images/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <title>AuditoryBench++</title>
-<!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet"> -->
 
+  <!-- CSS libs -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- Use Font Awesome 5 via CDN (unify to FA5) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- Project CSS -->
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- JS libs -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <!-- Remove if unused
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script> -->
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 
+  <style>
+    .item { padding-bottom: 20px; max-width: 100%; }
+    .case-study-container { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; }
+    .case-study-box {
+      width: 65%; max-width: 1000px; border-radius: 15px; border: 1px solid #ccc;
+      padding: 20px; box-shadow: 3px 3px 10px rgba(0,0,0,0.1); text-align: left; background: white;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .model-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    @media (max-width: 768px) { .model-row { flex-direction: column; } }
+    .icon { font-size: 18px; margin-left: 5px; }
+    .model-name { font-weight: bold; }
+    .text-danger { color: red; }
+    .text-success { color: green; }
+    .audio-container { display: flex; align-items: center; margin-left: auto; }
+    .audio-icon { font-size: 22px; margin-left: 10px; color: #007bff; }
+
+    .case-study-container2 {
+      display: flex; flex-direction: column; align-items: center; width: 100%;
+      text-align: center; margin-bottom: 40px;
+    }
+    .case-study-box2 {
+      width: 65%; max-width: 1000px; border-radius: 15px; border: 1px solid #ccc; padding: 15px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.1); text-align: left; background: white;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .case-study-box2 p { font-size: 16px; }
+
+    .spectrogram-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .spectrogram-box { display: flex; flex-direction: column; align-items: center; text-align: center; width: 250px; }
+    .spectrogram-box img { width: 250px; height: auto; border: 1px solid #ddd; border-radius: 5px; }
+    .spectrogram-label { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
+    .audio-container2 {
+      width: 100%; display: flex; justify-content: center; background: rgba(255,255,255,0.95);
+      padding: 6px; border-radius: 5px; margin-bottom: 8px;
+    }
+
+    .dki-section { margin-top: 100px !important; }
+    .fusion-section { margin-top: 100px !important; }
+    .fusion-image-container { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 30px; }
+    .fusion-image {
+      max-width: 100%; width: 600px; height: auto; border: 1px solid #ddd; border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.1); margin-bottom: 50px;
+    }
+    .carousel { max-width: 100%; }
+
+    /* Samples */
+    .sample-card { border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+    .sample-sentence { font-size: 16px; line-height: 1.6; }
+    mark.span { background: #fff2ac; padding: 0 .2em; border-radius: .2em; }
+    mark.span-2 { background: #c7f0ff; }
+    mark.span-3 { background: #BFFFE0; }
+
+    #samples-carousel .options { font-size: 16px; line-height: 1.4; margin-top: .5rem; }
+    #samples-carousel .options .choice{
+      display: inline-flex; align-items: center; gap: .5rem; margin: 6px 0; white-space: normal; color: #222;
+    }
+    #samples-carousel .options .choice .tag{ margin-right: .25rem; }
+    #samples-carousel .options .choice.is-correct{ font-weight: 600; }
+    #samples-carousel .options .choice .choice-text{ display: inline-block; }
+
+    #samples-carousel .options.grid-2col{
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 16px;
+    }
+
+    #samples-carousel .answer{
+      display: inline-flex !important; align-items: center !important; gap: .5rem !important;
+      margin-top: .5rem; font-size: 15px; color: #222 !important; visibility: visible !important;
+      opacity: 1 !important; white-space: normal !important; overflow: visible !important;
+    }
+    #samples-carousel .answer .tag{ display: inline-block !important; }
+    #samples-carousel .answer .answer-text{ display: inline !important; color: inherit !important; }
+  </style>
 </head>
 
-<style>
-  .item {
-    padding-bottom: 20px; 
-    max-width: 100%;
-}
-  
-  .case-study-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-  
-.case-study-box {
-    width: 65%; 
-    max-width: 1000px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.model-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Mobile layout - flex direction changes */
-@media (max-width: 768px) {
-  .model-row {
-    flex-direction: column;
-  }
-}
-
-  .icon {
-    font-size: 18px;
-    margin-left: 5px;
-  }
-
-
-  .model-name {
-    font-weight: bold;
-  }
-
-  .text-danger {
-    color: red;
-  }
-
-  .text-success {
-    color: green;
-  }
-  
-
-  .audio-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  .audio-icon {
-    font-size: 22px;
-    margin-left: 10px;
-    color: #007bff;
-  }
-
-  .case-study-container2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center; 
-  margin-bottom: 40px;
-}
-
-
-  .case-study-box2 {
-    width: 65%;
-    max-width: 1000px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    padding: 15px; 
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .case-study-box2 p {
-    font-size: 16px; 
-  }
-
-  .spectrogram-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-
-  .spectrogram-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 250px; 
-  }
-
-  .spectrogram-box img {
-    width: 250px; 
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-
-
-  .spectrogram-label {
-    font-size: 16px; 
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  .audio-container2 {
-    width: 100%; 
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 6px;
-    border-radius: 5px;
-    margin-bottom: 8px;
-  } 
-
-
-  .dki-section {
-  margin-top: 100px !important; 
-}
-
-  .fusion-section {
-  margin-top: 100px !important; 
-}
-
-.fusion-image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.fusion-image {
-  max-width: 100%; 
-  width: 600px;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
-}
-
-  .carousel {
-  max-width: 100%; 
-}
-</style>
-  
 <body>
-
-
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-3 publication-title">AuditoryBench++: Can Language Models Understand
-Auditory Knowledge without Hearing?</h1>
+            <h1 class="title is-3 publication-title">
+              AuditoryBench++: Can Language Models Understand Auditory Knowledge without Hearing?
+            </h1>
+
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block"> 
-                <a href="https://hj-ok.github.io" target="_blank">Hyunjong Ok</a><sup>1,2*</sup>,</span>
-                <span class="author-block">
-                  <a href="https://suho-yoo.github.io/" target="_blank">Suho Yoo</a><sup>2,3*</sup>,</span>
-                  <span class="author-block">
-                  <span>Hyeonjun Kim</span><sup>1</sup>,</span>
-                  <span class="author-block">
-                  <a href="https://mm.kaist.ac.kr/joon/" target="_blank">Joon Son Chung</a><sup>3</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://jaeho-lee.github.io" target="_blank">Jaeho Lee</a><sup>1</sup>
-                  </span>
-              </div>
+              <span class="author-block">
+                <a href="https://hj-ok.github.io" target="_blank" rel="noopener noreferrer">Hyunjong Ok</a><sup>1,2*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://suho-yoo.github.io/" target="_blank" rel="noopener noreferrer">Suho Yoo</a><sup>2,3*</sup>,
+              </span>
+              <span class="author-block">
+                <span>Hyeonjun Kim</span><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://mm.kaist.ac.kr/joon/" target="_blank" rel="noopener noreferrer">Joon Son Chung</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jaeho-lee.github.io" target="_blank" rel="noopener noreferrer">Jaeho Lee</a><sup>1</sup>
+              </span>
+            </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>POSTECH <sup>2</sup>HJ AILAB <sup>3</sup>KAIST  <br>ICASSP 2026 Submission
+              </span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>POSTECH <sup>2</sup>HJ AILAB <sup>3</sup>KAIST  <br>ICASSP 2026 Submission</span>  
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-
-<!--                   <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2503.16853.pdf" target="_blank" 
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span> -->
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/HJ-OK/AuditoryBenchpp" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+            <!-- Links -->
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- GitHub -->
+                <span class="link-block">
+                  <a href="https://github.com/HJ-OK/AuditoryBenchpp" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -275,608 +164,505 @@ Auditory Knowledge without Hearing?</h1>
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
+                <!-- arXiv -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
 
-<!--             Huggingface Link -->
-            <span class="link-block">
-                    <a href="https://huggingface.co/datasets/HJOK/AuditoryBenchpp" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                <!-- Dataset (HF) -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/HJOK/AuditoryBenchpp" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-database"></i>
                     </span>
                     <span>Dataset</span>
                   </a>
                 </span>
-            <!-- 이미지 추가 -->
-<div class="has-text-centered" style="margin-top: 2rem;">
-  <figure class="image is-inline-block">
-    <img src="static/images/fig1.png" alt="AuditoryBench++ fig1" style="max-width: 600px;">
-  </figure>
-</div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+            <!-- Top figure -->
+            <div class="has-text-centered" style="margin-top: 2rem;">
+              <figure class="image is-inline-block">
+                <img src="static/images/fig1.png" alt="AuditoryBench++ fig1" style="max-width: 600px;">
+              </figure>
+            </div>
+
+          </div> <!-- /.column -->
+        </div>   <!-- /.columns -->
+      </div>     <!-- /.container -->
+    </div>       <!-- /.hero-body -->
   </section>
 
-
-
-  
-  
-
-      
-<!-- Paper abstract -->
+  <!-- Abstract -->
   <section class="section hero is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="section-title has-text-centered">
-        <h3 class="title is-3">Abstract</h3>
-      </div>
-      <div class="content has-text-justified">
-        <p style="font-size:18px; margin-top: 30px;">
-            Even without directly hearing sounds, humans can effort
-          lessly reason about auditory properties, such as pitch, 
-          loudness, or sound-source associations, drawing on auditory commonsense. 
-          In contrast, language models often lack this capability,
-          limiting their effectiveness in multimodal interactions. 
-          As the first step to address this gap, we present AuditoryBench++, 
-          a comprehensive benchmark for evaluating auditory knowledge 
-          and reasoning in text-only settings. The benchmark encompasses 
-          tasks that range from basic auditory comparisons to contextually 
-          grounded reasoning, enabling fine-grained analysis of how models process 
-          and integrate auditory concepts. In addition, we introduce AIR-CoT, a 
-          novel auditory imagination reasoning method that generates 
-          and integrates auditory information during inference 
-          through span detection with special tokens and knowledge 
-          injection. Extensive experiments with recent LLMs and Multimodal LLMs 
-          demonstrate that AIR-CoT consistently outperforms both 
-          the off-the-shelf models and those augmented with prior techniques.
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="section-title has-text-centered">
+          <h3 class="title is-3">Abstract</h3>
+        </div>
+        <div class="content has-text-justified">
+          <p style="font-size:18px; margin-top: 30px;">
+            Even without directly hearing sounds, humans can effortlessly reason about auditory properties, such as pitch,
+            loudness, or sound-source associations, drawing on auditory commonsense. In contrast, language models often lack
+            this capability, limiting their effectiveness in multimodal interactions. As the first step to address this gap,
+            we present AuditoryBench++, a comprehensive benchmark for evaluating auditory knowledge and reasoning in text-only
+            settings. The benchmark encompasses tasks that range from basic auditory comparisons to contextually grounded
+            reasoning, enabling fine-grained analysis of how models process and integrate auditory concepts. In addition,
+            we introduce AIR-CoT, a novel auditory imagination reasoning method that generates and integrates auditory
+            information during inference through span detection with special tokens and knowledge injection. Extensive
+            experiments with recent LLMs and Multimodal LLMs demonstrate that AIR-CoT consistently outperforms both the
+            off-the-shelf models and those augmented with prior techniques.
           </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+  </section>
 
+  <!-- Dataset Pipeline -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop" style="margin-top: 10px;">
+        <div class="section-title has-text-centered">
+          <h3 class="title is-3">Dataset Pipeline</h3>
+        </div>
+        <div class="content has-text-left">
+          <img src="static/images/dataset_pipeline.png" alt="Details of the Pipeline" style="display: inline-block;"/>
+          <p style="font-size:18px; margin-top:30px;">
+            The construction pipeline is presented below, with tasks grouped by their original resource.
+          </p>
 
-<!-- Data Pipeline -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop" style="margin-top: 10px;">
-      <div class="section-title has-text-centered">
-        <h3 class="title is-3">Dataset Pipeline</h3>
-      </div>
-      <div class="content has-text-left">
-        <img src="static/images/dataset_pipeline.png" alt="Details of the Pipeline" style="display: inline-block;"/>
-        <p style="font-size:18px; margin-top:30px;">
-  The construction pipeline is presented below, with tasks grouped by their original resource.
-</p>
+          <ul style="font-size:18px;">
+            <li><b>AuditoryBench</b>
+              <ul>
+                <li><b>Pitch Comparison:</b> Derived from the <i>AuditoryBench</i> wiki set on sound pitch comparison.
+                  This subset primarily consists of instrument-based pairs, allowing for objective and unambiguous
+                  evaluations of relative pitch differences
+                  (<a href="https://en.wikipedia.org/wiki/Range_(music)" target="_blank" rel="noopener noreferrer">Range (music)</a>).
+                </li>
+                <li><b>Animal Sound Recognition:</b> Constructed from the <i>AuditoryBench</i> wiki and test sets.
+                  Three authors independently scored each sample on a 0–2 scale, and any item receiving a score of 0
+                  from at least one annotator was removed. Inter-rater agreement was substantial
+                  (Kendall’s W = 0.666; ICC(2,k) = 0.75; Cronbach’s α = 0.75), ensuring dataset consistency and reliability.
+                </li>
+              </ul>
+            </li>
 
-<ul style="font-size:18px;">
-  <li><b>AuditoryBench</b>
-    <ul>
-      <li><b>Pitch Comparison:</b> Derived from the <i>AuditoryBench</i> wiki set on sound pitch comparison. 
-        This subset primarily consists of instrument-based pairs, allowing for objective and unambiguous 
-        evaluations of relative pitch differences 
-        (<a href="https://en.wikipedia.org/wiki/Range_(music)" target="_blank">Range (music)</a>).
-      </li>
-      <li><b>Animal Sound Recognition:</b> Constructed from the <i>AuditoryBench</i> wiki and test sets. 
-        Three authors independently scored each sample on a 0–2 scale, and any item receiving a score of 0 
-        from at least one annotator was removed. Inter-rater agreement was substantial 
-        (Kendall’s W = 0.666; ICC(2,k) = 0.75; Cronbach’s α = 0.75), ensuring dataset consistency and reliability.
-      </li>
-    </ul>
-  </li>
+            <li><b>AudioTime</b>
+              <ul>
+                <li><b>Duration Comparison:</b> Built from segment-level annotations. Classes with fewer than 30 samples
+                  were excluded, outliers were removed using the IQR rule, and only statistically significant contrasts
+                  (p &lt; 0.01) were retained.
+                </li>
+                <li><b>Loudness Comparison:</b> Derived from the same source, with loudness measured by peak decibel
+                  levels in each segment to ensure reliable intensity distinctions. The same statistical filtering process as in the duration task was then applied.
+                </li>
+                <li>Final filtering was applied by the authors to remove classes deemed unsuitable for either task.</li>
+              </ul>
+            </li>
 
-  <li><b>AudioTime</b>
-    <ul>
-      <li><b>Duration Comparison:</b> Built from segment-level annotations. Classes with fewer than 30 samples 
-        were excluded, outliers were removed using the IQR rule, and only statistically significant contrasts 
-        (p &lt; 0.01) were retained.
-      </li>
-      <li><b>Loudness Comparison:</b> Derived from the same source, with loudness measured by peak decibel 
-        levels in each segment to ensure reliable intensity distinctions. The same statistical filtering process as in the duration task was then applied.
-      </li>
-      <li>Final filtering was applied by the authors to remove classes deemed unsuitable for either task.</li>
-    </ul>
-    
-  </li>
+            <li><b>MMAU</b>
+              <ul>
+                <li><b>Auditory Context Reasoning:</b> Adapted from the open MMAU set. Audio clips were first captioned
+                  using Qwen2-Audio to capture salient auditory cues. The captions, together with the original questions,
+                  were reformulated by GPT-4o into text-only problems while preserving reasoning objectives.
+                  Human verification and refinement were applied to discard incoherent items and ensure naturalness
+                  in a purely text-based setting.
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-  <li><b>MMAU</b>
-    <ul>
-      <li><b>Auditory Context Reasoning:</b> Adapted from the open MMAU set. Audio clips were first captioned 
-        using Qwen2-Audio to capture salient auditory cues. The captions, together with the original questions, 
-        were reformulated by GPT-4o into text-only problems while preserving reasoning objectives. 
-        Human verification and refinement were applied to discard incoherent items and ensure naturalness 
-        in a purely text-based setting.
-      </li>
-    </ul>
-  </li>
-</ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-<!-- Dataset Samples -->
-<section class="section hero is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Dataset Samples</h2>
-      <div id="samples-carousel" class="carousel results-carousel">
-        
-        <!-- PITCH -->
-        <div class="item">
-          <h3 class="subtitle has-text-centered"><b>Pitch Comparison</b></h3>
-          <div class="columns is-multiline">
+  <!-- Dataset Samples -->
+  <section class="section hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Dataset Samples</h2>
+        <div id="samples-carousel" class="carousel results-carousel">
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">Bass</mark> is [MASK] than the sound of <mark class="span span-2">Alto</mark>.
-                  </p>
-                  <div class="answer">
-                    <span class="tag is-info">Answer</span>
-                    <span class="answer-text"><b>Lower</b></span>
+          <!-- PITCH -->
+          <div class="item">
+            <h3 class="subtitle has-text-centered"><b>Pitch Comparison</b></h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">Bass</mark> is [MASK] than the sound of <mark class="span span-2">Alto</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Lower</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">Cello</mark> is [MASK] than the sound of <mark class="span span-2">Violin</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Lower</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">Harp</mark> is [MASK] than the sound of <mark class="span span-2">bass saxophone</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Higher</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">flute</mark> is [MASK] than the sound of <mark class="span span-2">bass trumpet</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Higher</b></span></div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">Cello</mark> is [MASK] than the sound of <mark class="span span-2">Violin</mark>.
-                  </p>
-                  <div class="answer">
-                    <span class="tag is-info">Answer</span>
-                    <span class="answer-text"><b>Lower</b></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">Harp</mark> is [MASK] than the sound of <mark class="span span-2">bass saxophone</mark>.
-                  </p>
-                  <div class="answer">
-                    <span class="tag is-info">Answer</span>
-                    <span class="answer-text"><b>Higher</b></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">flute</mark> is [MASK] than the sound of <mark class="span span-2">bass trumpet</mark>.
-                  </p>
-                  <div class="answer">
-                    <span class="tag is-info">Answer</span>
-                    <span class="answer-text"><b>Higher</b></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- DURATION -->
-        <div class="item">
-          <h3 class="subtitle has-text-centered"><b>Duration Comparison</b></h3>
-          <div class="columns is-multiline">
+          <!-- DURATION -->
+          <div class="item">
+            <h3 class="subtitle has-text-centered"><b>Duration Comparison</b></h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">clicking</mark> is [MASK] than the sound of <mark class="span span-2">aircraft engine</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">clicking</mark> is [MASK] than the sound of <mark class="span span-2">aircraft engine</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">quack</mark> is [MASK] than the sound of <mark class="span span-2">alarm clock</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">meow</mark> is [MASK] than the sound of <mark class="span span-2">ambulance (siren)</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">oink</mark> is [MASK] than the sound of <mark class="span span-2">vehicle horn</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Longer</b></span></div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">quack</mark> is [MASK] than the sound of <mark class="span span-2">alarm clock</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">meow</mark> is [MASK] than the sound of <mark class="span span-2">ambulance (siren)</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Shorter</b></span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">oink</mark> is [MASK] than the sound of <mark class="span span-2">vehicle horn</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Longer</b></span></div>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- LOUDNESS -->
-        <div class="item">
-          <h3 class="subtitle has-text-centered"><b>Loudness Comparison</b></h3>
-          <div class="columns is-multiline">
+          <!-- LOUDNESS -->
+          <div class="item">
+            <h3 class="subtitle has-text-centered"><b>Loudness Comparison</b></h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">applause</mark> is [MASK] than the sound of <mark class="span span-2">knock</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The  is louder than the .
-                    The sound of <mark class="span span-1">applause</mark> is [MASK] than the sound of <mark class="span span-2">cknock</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">baby cry, infant cry</mark> is [MASK] than the sound of <mark class="span span-2">sigh</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">tick</mark> is [MASK] than the sound of <mark class="span span-2">cough</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Quieter</b></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      The sound of <mark class="span span-1">drill</mark> is [MASK] than the sound of <mark class="span span-2">printer</mark>.
+                    </p>
+                    <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">baby cry, infant cry</mark> is [MASK] than the sound of <mark class="span span-2">sigh</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">tick</mark> is [MASK] than the sound of <mark class="span span-2">cough</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Quieter</b></span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of <mark class="span span-1">drill</mark> is [MASK] than the sound of <mark class="span span-2">printer</mark>.
-                  </p>
-                  <div class="answer"><span class="tag is-info">Answer</span><span class="answer-text"><b>Louder</b></span></div>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- ANIMAL -->
-        <div class="item">
-          <h3 class="subtitle has-text-centered"><b>Animal Sound Recognition</b></h3>
-          <div class="columns is-multiline">
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    [MASK] make a chirp sound.
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag">A</span><span class="choice-text">Fish</span></div>
-                    <div class="choice"><span class="tag"><b>B</b></span><span class="choice-text"><mark class="span span-3"><b>Bird</b></mark></span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Snake</span></div>
-                    <div class="choice"><span class="tag">D</span><span class="choice-text">Kangaroo</span></div>
+          <!-- ANIMAL -->
+          <div class="item">
+            <h3 class="subtitle has-text-centered"><b>Animal Sound Recognition</b></h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">[MASK] make a chirp sound.</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag">A</span><span class="choice-text">Fish</span></div>
+                      <div class="choice"><span class="tag"><b>B</b></span><span class="choice-text"><mark class="span span-3"><b>Bird</b></mark></span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Snake</span></div>
+                      <div class="choice"><span class="tag">D</span><span class="choice-text">Kangaroo</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of buzzing is usually associated with a [MASK].
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag">A</span><span class="choice-text">Eagle</span></div>
-                    <div class="choice"><span class="tag">B<</span><span class="choice-text">Dolphin</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Cheetah</span></div>
-                    <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Fly</b></mark></span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">The sound of buzzing is usually associated with a [MASK].</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag">A</span><span class="choice-text">Eagle</span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Dolphin</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Cheetah</span></div>
+                      <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Fly</b></mark></span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    The sound of [MASK] chewing grass is a common farm sound.
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag">A</span><span class="choice-text">Cheetah</span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Gazelle</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Zebra</span></div>
-                    <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Horse</b></mark></span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">The sound of [MASK] chewing grass is a common farm sound.</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag">A</span><span class="choice-text">Cheetah</span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Gazelle</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Zebra</span></div>
+                      <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Horse</b></mark></span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    At night, in the summer, you can hear the [MASK] chirping.
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Cricket</b></mark></span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Raccoon</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Owl</span></div>
-                    <div class="choice"><span class="tag">D</span><span class="choice-text">Bat</span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">At night, in the summer, you can hear the [MASK] chirping.</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Cricket</b></mark></span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Raccoon</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Owl</span></div>
+                      <div class="choice"><span class="tag">D</span><span class="choice-text">Bat</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
-        </div>
 
-        <!-- AUDITORY CONTEXT REASONING (2×2 choices) -->
-        <div class="item">
-          <h3 class="subtitle has-text-centered"><b>Auditory Context Reasoning</b></h3>
-          <div class="columns is-multiline">
-
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    What type of natural sound is described as water splashing continuously?
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Rainfall</b></mark></span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Fire crackling</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Wind blowing</span></div>
-                    <div class="choice"><span class="tag">D</span><span class="choice-text">Animal sounds</span></div>
+          <!-- ACR -->
+          <div class="item">
+            <h3 class="subtitle has-text-centered"><b>Auditory Context Reasoning</b></h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">What type of natural sound is described as water splashing continuously?</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Rainfall</b></mark></span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Fire crackling</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Wind blowing</span></div>
+                      <div class="choice"><span class="tag">D</span><span class="choice-text">Animal sounds</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    Where is the sound of someone snoring most likely coming from?
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag">A</span><span class="choice-text">Bathroom</span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Office</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Street</span></div>
-                    <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Bedroom</b></mark></span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">Where is the sound of someone snoring most likely coming from?</p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag">A</span><span class="choice-text">Bathroom</span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Office</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Street</span></div>
+                      <div class="choice"><span class="tag"><b>D</b></span><span class="choice-text"><mark class="span span-3"><b>Bedroom</b></mark></span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    During a street busking performance with bells and a xylophone, what background noise is most likely heard?
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Crowd</b></mark></span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Solo singer</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Wind</span></div>
-                    <div class="choice"><span class="tag">D</span><span class="choice-text">Animal sounds</span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      During a street busking performance with bells and a xylophone, what background noise is most likely heard?
+                    </p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Crowd</b></mark></span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Solo singer</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Wind</span></div>
+                      <div class="choice"><span class="tag">D</span><span class="choice-text">Animal sounds</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="column is-half">
-              <div class="card sample-card">
-                <div class="card-content">
-                  <p class="content sample-sentence">
-                    What musical genre is described as a piece with a positive vibe suitable for a road trip scene?
-                  </p>
-                  <div class="options grid-2col">
-                    <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Rock</b></mark></span></div>
-                    <div class="choice"><span class="tag">B</span><span class="choice-text">Jazz</span></div>
-                    <div class="choice"><span class="tag">C</span><span class="choice-text">Classical</span></div>
-                    <div class="choice"><span class="tag">D</span><span class="choice-text">Blues</span></div>
+              <div class="column is-half">
+                <div class="card sample-card">
+                  <div class="card-content">
+                    <p class="content sample-sentence">
+                      What musical genre is described as a piece with a positive vibe suitable for a road trip scene?
+                    </p>
+                    <div class="options grid-2col">
+                      <div class="choice"><span class="tag"><b>A</b></span><span class="choice-text"><mark class="span span-3"><b>Rock</b></mark></span></div>
+                      <div class="choice"><span class="tag">B</span><span class="choice-text">Jazz</span></div>
+                      <div class="choice"><span class="tag">C</span><span class="choice-text">Classical</span></div>
+                      <div class="choice"><span class="tag">D</span><span class="choice-text">Blues</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
-        </div>
 
+        </div> <!-- /#samples-carousel -->
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- End Dataset Samples -->
 
-<style>
-  .sample-card { border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-  .sample-sentence { font-size: 16px; line-height: 1.6; }
-  mark.span { background: #fff2ac; padding: 0 .2em; border-radius: .2em; }
-  mark.span-2 { background: #c7f0ff; }
-  mark.span-3 {background: #BFFFE0; }
-
-  /* choices */
-  #samples-carousel .options { font-size: 16px; line-height: 1.4; margin-top: .5rem; }
-  #samples-carousel .options .choice{
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    margin: 6px 0;
-    white-space: normal;
-    color: #222;
-  }
-  #samples-carousel .options .choice .tag{ margin-right: .25rem; }
-  #samples-carousel .options .choice.is-correct{ font-weight: 600; }
-  #samples-carousel .options .choice .choice-text{ display: inline-block; }
-
-  /* 2×2 grid for ACR only */
-  #samples-carousel .options.grid-2col{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px 16px;  /* row-gap / column-gap */
-  }
-
-  /* answers */
-  #samples-carousel .answer{
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: .5rem !important;
-    margin-top: .5rem;
-    font-size: 15px;
-    color: #222 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-  }
-  #samples-carousel .answer .tag{ display: inline-block !important; }
-  #samples-carousel .answer .answer-text{ display: inline !important; color: inherit !important; }
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.bulmaCarousel) {
-    bulmaCarousel.attach('#samples-carousel', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      infinite: true,
-      loop: true,
-      navigation: true,
-      pagination: true,
-      autoplay: true,
-      pauseOnHover: true
-    });
-  }
-});
-</script>
-<!-- End Dataset Sampels -->
-
-<!-- Dataset Statistics -->
+  <!-- Dataset Statistics -->
   <section class="section hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="section-title has-text-centered">
-        <h3 class="title is-3">Dataset Statistics</h3>
-      </div>
-      <div class="content has-text-justified">
-        <h3 class="subtitle has-text-centered" style="margin-top: 30px;">Answer Distribution</h3>
-<!--         <img src="static/images/comparison_stat.png" alt="comparision" style="display: inline-block;"/>
-        <img src="static/images/others_stat.png" alt="others" style="display: inline-block;"/> -->
-        <img src="static/images/answer_dist.jpg" alt="answer_dist" style="display: inline-block;"/>
-      </div>
-      <div class="content has-text-justified">
-        <h3 class="subtitle has-text-centered">#Data</h3>
-        <img src="static/images/number.jpg" alt="number" style="display: inline-block;"/>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="section-title has-text-centered">
+          <h3 class="title is-3">Dataset Statistics</h3>
+        </div>
+        <div class="content has-text-justified">
+          <h3 class="subtitle has-text-centered" style="margin-top: 30px;">Answer Distribution</h3>
+          <img src="static/images/answer_dist.jpg" alt="answer_dist" style="display: inline-block;"/>
+        </div>
+        <div class="content has-text-justified">
+          <h3 class="subtitle has-text-centered">#Data</h3>
+          <img src="static/images/number.jpg" alt="number" style="display: inline-block;"/>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Dataset Statistics -->
+  </section>
 
-<!-- Training Pipeline -->
+  <!-- Method -->
   <section class="section hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="section-title has-text-centered">
-        <h3 class="title is-3">Method</h3>
-      </div>
-      <div class="content has-text-justified">
-        <img src="static/images/method.png" alt="comparision" style="display: inline-block; margin-top:30px;"/>
-        <p style="font-size:18px; margin-top:30px;">
-        <b>Pipeline of the proposed AIR-CoT:</b>
-      </p>
-        <ol type="a" style="margin-top:10px;">
-          <li><b>Data Preparation:</b> Training data is augmented with <span style="font-family: monospace; background: none; color: inherit;">[imagine]</span> tokens to mark spans requiring auditory reasoning.</li>
-          <li><b>Stage 1 – Span Detection:</b> The model is fine-tuned to detect the spans by generating the special tokens during decoding.</li>
-          <li><b>Stage 2 – Knowledge Injection:</b> When encountering the <span style="font-family: monospace; background: none; color: inherit;">[/imagine]</span> token, the model pauses to generate the embedding using CLAP and injects it for auditory reasoning.</li>
-        </ol>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="section-title has-text-centered">
+          <h3 class="title is-3">Method</h3>
+        </div>
+        <div class="content has-text-justified">
+          <img src="static/images/method.png" alt="comparision" style="display: inline-block; margin-top:30px;"/>
+          <p style="font-size:18px; margin-top:30px;"><b>Pipeline of the proposed AIR-CoT:</b></p>
+          <ol type="a" style="margin-top:10px;">
+            <li><b>Data Preparation:</b> Training data is augmented with <span style="font-family: monospace; background: none; color: inherit;">[imagine]</span> tokens to mark spans requiring auditory reasoning.</li>
+            <li><b>Stage 1 – Span Detection:</b> The model is fine-tuned to detect the spans by generating the special tokens during decoding.</li>
+            <li><b>Stage 2 – Knowledge Injection:</b> When encountering the <span style="font-family: monospace; background: none; color: inherit;">[/imagine]</span> token, the model pauses to generate the embedding using CLAP and injects it for auditory reasoning.</li>
+          </ol>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Training Pipeline -->
+  </section>
 
-
-<!--BibTex citation -->
+  <!-- BibTeX -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>TBD</code></pre>
     </div>
-</section>
-<!--End BibTex citation -->
+  </section>
 
-
+  <!-- Footer -->
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  <!-- Carousel init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.bulmaCarousel) {
+        bulmaCarousel.attach('#samples-carousel', {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          infinite: true,
+          loop: true,
+          navigation: true,
+          pagination: true,
+          autoplay: true,
+          pauseOnHover: true
+        });
+      }
+    });
+  </script>
+</body>
+</html>
